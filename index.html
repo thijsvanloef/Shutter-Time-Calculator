@@ -12,6 +12,9 @@
     gtag('config', 'G-B5BYPF2S7R');
   </script>
   <script src="https://kit.fontawesome.com/fe47b6d2c9.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/calculate.js"></script>
+  <!-- Google tag end -->
+
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,6 +23,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
+  <!-- Bootstrap CSS end -->
   <title>NPF Calculator</title>
 </head>
 
@@ -41,8 +45,8 @@
         </ul>
       </div>
     </nav>
-    <!-- Main Menu Env -->
   </div>
+   <!-- Main Menu Env -->
   <div class="section-1-container section-container">
     <div class="container">
       <div class="row">
@@ -164,27 +168,6 @@
       </div>
     </div>
   </div>
-
-
-  <script>
-    function calculateNPF() {
-      // TODO: form validation
-      var sensorSize = document.querySelector('#sensorSize').value;
-      var aperture = document.querySelector('#aperture').value;
-      var focalLength = document.querySelector('#focalLength').value;
-      var pixelSize = document.querySelector('#pixelSize').value;
-      var declination = document.querySelector('#declination').value;
-      var accuracy = document.querySelector('#accuracy').value;
-      result = accuracy * (16.856 * aperture + 0.0997 * focalLength + 13.713 * pixelSize) / (focalLength * Math.cos(declination))
-      document.getElementById("result").innerHTML = result.toFixed(1) + "s";
-      simplifiedResult = (35 * aperture + 30 * pixelSize) / focalLength
-      document.getElementById("simplifiedResult").innerHTML = simplifiedResult.toFixed(1) + "s";
-      fivehundredResult = 500 / (sensorSize * focalLength)
-      document.getElementById("fivehundredResult").innerHTML = fivehundredResult.toFixed(1) + "s";
-      fourcropResult = (4 - sensorSize) * 100 / focalLength
-      document.getElementById("fourcropResult").innerHTML = fourcropResult.toFixed(1) + "s";
-    }
-  </script>
 
 
   <!-- Optional JavaScript -->

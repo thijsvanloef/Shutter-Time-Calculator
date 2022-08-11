@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5BYPF2S7R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-B5BYPF2S7R');
+  </script>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -146,7 +155,7 @@
       var pixelSize = document.querySelector('#pixelSize').value;
       var declination = document.querySelector('#declination').value;
       var accuracy = document.querySelector('#accuracy').value;
-      result = accuracy*(16.856 * aperture + 0.0997 * focalLength + 13.713 * pixelSize) / (focalLength * Math.cos(declination))
+      result = accuracy * (16.856 * aperture + 0.0997 * focalLength + 13.713 * pixelSize) / (focalLength * Math.cos(declination))
       document.getElementById("result").innerHTML = result.toFixed(1) + "s";
       simplifiedResult = (35 * aperture + 30 * pixelSize) / focalLength
       document.getElementById("simplifiedResult").innerHTML = simplifiedResult.toFixed(1) + "s";

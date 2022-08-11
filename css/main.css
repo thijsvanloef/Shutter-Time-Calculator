@@ -53,12 +53,15 @@ body {
 .leftmenutrigger {
     display: none
 }
+
 .navbar {
     background-color: lightgrey !important;
 }
+
 .nav-link {
     color: black !important;
 }
+
 @media(min-width:992px) {
     .leftmenutrigger {
         display: block;
@@ -97,6 +100,7 @@ body {
     -ms-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out
 }
+
 #err {
     color: red;
 }

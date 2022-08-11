@@ -16,9 +16,9 @@ function calculateNPF() {
   document.getElementById("fourcropResult").innerHTML = fourcropResult.toFixed(1) + "s";
 }
 function isNumber(input) {
-  if(!isNaN(input)){
+  if (!isNaN(input)) {
     return input
-   }else{
+  } else {
     document.getElementById("err").innerHTML = "Please enter a valid number"
-   }
+  }
 }

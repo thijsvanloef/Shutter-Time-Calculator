@@ -13,6 +13,7 @@
   </script>
   <script src="https://kit.fontawesome.com/fe47b6d2c9.js" crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/calculate.js"></script>
+
   <!-- Google tag end -->
 
   <!-- Required meta tags -->
@@ -27,7 +28,9 @@
   <title>Shutter Time Calculator</title>
 </head>
 
+
 <body>
+
   <!-- Main Menu Start -->
   <div id="wrapper" class="animate">
     <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
@@ -73,6 +76,21 @@
               <fieldset>
                 <div class="form-group">
                   <label class="control-label" for="sensorSize"><b>Sensor Size</b></label>
+                  <button type="button" class="collapsible">?</button>
+                  <div class="content">
+                    <p>Sensor size will determine the crop factor of your images.</p>
+                    <ul>
+                      <li><b>Medium Format</b>: Crop factor of 0.6x</li>
+                      <li><b>Full Frame</b>: Crop factor of 1x</li>
+                      <li><b>APC</b>: Crop factor of 1.5x</li>
+                      <li><b>APC (Canon)</b>: Crop factor of 1.6x</li>
+                      <li><b>3/4</b>: Crop factor of 2x</li>
+                      <li><b>1 Inch</b>: Crop factor of 2.7x</li>
+                    </ul>
+                    <p>If you do not know your crop factor go to <a target="_blank"
+                        href="https://www.digicamdb.com/">digicamdb.com</a> find your camera, and search for "crop
+                      factor"</p>
+                  </div>
                   <div>
                     <select onchange="calculateNPF()" id="sensorSize" name="sensorSize" class="form-control">
                       <option value="0.6">Medium Format</option>
@@ -80,13 +98,18 @@
                       <option value="1.5">APC</option>
                       <option value="1.6">APC (Canon)</option>
                       <option value="2">3/4</option>
-                      <option value="2.7">1-Inch</option>
+                      <option value="2.7">1 Inch</option>
                     </select>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label class="control-label" for="aperture"><b>Lens Aperture (f)</b></label>
+                  <button type="button" class="collapsible">?</button>
+                  <div class="content">
+                    <p>Aperture of the lens you are shooting with, this is usually found on the lens itself or the
+                      interface, usually indicated with an F value (example F/1.8) </p>
+                  </div>
                   <div>
                     <input id="aperture" name="aperture" type="text" placeholder="1.8" value="1.8"
                       class="form-control input-md">
@@ -95,6 +118,10 @@
 
                 <div class="form-group">
                   <label class="control-label" for="focalLength"><b>Focal Length (mm)</b></label>
+                  <button type="button" class="collapsible">?</button>
+                  <div class="content">
+                    <p>Focal length of the lens, can be found on the lens/focus rinng, indicated in mm</p>
+                  </div>
                   <div>
                     <input id="focalLength" name="focalLength" type="text" placeholder="50" value="50"
                       class="form-control input-md">
@@ -102,7 +129,12 @@
                 </div>
 
                 <div class="form-group">
-                  <label class="control-label" for="pixelSize"><b>Pixel Size (µm)</b></label>
+                  <label class="control-label" for="pixelSize"><b>Pixel Size/Pitch (µm)</b></label>
+                  <button type="button" class="collapsible">?</button>
+                  <div class="content">
+                    <p>Pixel size/pitch of an individual pixel on the camera sensor, you can find the pixel size/pitch
+                      on <a target="_blank" href="https://www.digicamdb.com/">digicamdb.com</a>.</p>
+                  </div>
                   <div>
                     <input id="pixelSize" name="pixelSize" type="text" placeholder="7" value="7"
                       class="form-control input-md">
@@ -111,6 +143,12 @@
 
                 <div class="form-group">
                   <label class="control-label" for="declination"><b>Declination (Δ°)</b></label>
+                  <button type="button" class="collapsible">?</button>
+                  <div class="content">
+                    <p>Declination is the amount of degrees the target you want to photograph is from the horizon. If
+                      you are not sure what the declination is, set this to 0 or find your target on <a target="_blank"
+                        href="https://stellarium-web.org/">stellarium-web.org</a></p>
+                  </div>
                   <div>
                     <input id="declination" name="declination" type="text" placeholder="0" value="0"
                       class="form-control input-md">
@@ -119,6 +157,17 @@
 
                 <div class="form-group">
                   <label class="control-label" for="accuracy"><b>Accuracy</b></label>
+                  <button type="button" class="collapsible">?</button>
+                  <div class="content">
+                    <p>Accuracy will be used to calculate the NPF rule, you can select the following:</p>
+                    <ul>
+                      <li><b>Pin Point</b>: Stars will look like points (very short exposures)</li>
+                      <li><b>Slight trailing</b>: Stars will have some slight trailing (longer exposures but less
+                        accurate)</li>
+                      <li><b>Major trailing</b>: Stars will have major trailing (very long exposures, very inaccurate,
+                        not recommended)</li>
+                    </ul>
+                  </div>
                   <div>
                     <select onchange="calculateNPF()" id="accuracy" name="accuracy" class="form-control">
                       <option value="1">Pin Point</option>
@@ -175,13 +224,24 @@
               </div>
             </div>
             <h2>NPF Rule</h2>
-            <p></p>
+            <code>Shutter Speed = Accuracy * (16.856 * Lens Aperture + 0.0997 * Focal Length + 13.713 * Pixel Size) / (Focal Length * cos(Declination))</code>
+            <p>The NFP rule is a rule that makes it (fairly) easy to calculate the maximum exposure time to take a photo
+              of a starry sky without the stars trailing too much. This rule replaces the old “rule of 500” which gives
+              results that are too uncertain.</p>
             <h2>NPF Rule Simplified</h2>
-            <p></p>
+            <code>Shutter Speed = (35 * Lens Aperture + 30 * Pixel Size) / Focal Length</code>
+            <p>A Simplified version of the original NPF rule that does not take into account the pixel density of the
+              camera sensor</p>
             <h2>The 500 Rule</h2>
-            <p></p>
+            <code>Shutter Speed = 500 / (Sensor Crop Factor * Focal Length) </code>
+            <p>The 500 rule is a measurement used to determine the maximum exposure time that can be used in a
+              photograph before star trails appear or before the stars become blurry. If you set the shutter speed for a
+              longer amount of time than what is permitted by this rule, the photographs you take will not have sharp
+              stars. <b>I do not recommend using this rule</b>.</p>
             <h2>The 4 Crop Rule</h2>
-            <p></p>
+            <code>Shutter Speed = (4 - Sensor Crop Factor) * 100 / Focal Length</code>
+            <p>The simplest rule (except for the 500 rule) that is less precise then the NPF rule, but much more precise
+              then the 500 rule.</p>
           </div>
 
         </div>
@@ -189,8 +249,8 @@
     </div>
   </div>
 
-
   <!-- Optional JavaScript -->
+  <script type="text/javascript" src="js/collapsable.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

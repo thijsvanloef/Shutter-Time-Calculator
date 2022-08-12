@@ -5,6 +5,8 @@ function calculateNPF() {
   var pixelSize = isNumber(document.querySelector('#pixelSize').value);
   var declination = isNumber(document.querySelector('#declination').value);
   var accuracy = isNumber(document.querySelector('#accuracy').value);
+  plateResult = (206265 * (pixelSize / 1000) / focalLength) / 15
+  document.getElementById("plateResult").innerHTML = plateResult.toFixed(1) + "s";
   result = accuracy * (16.856 * aperture + 0.0997 * focalLength + 13.713 * pixelSize) / (focalLength * Math.cos(declination))
   document.getElementById("result").innerHTML = result.toFixed(1) + "s";
   simplifiedResult = (35 * aperture + 30 * pixelSize) / focalLength

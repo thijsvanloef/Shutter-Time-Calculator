@@ -206,10 +206,10 @@
               <div class="col-md-6">
                 <div class="card border mx-sm-1 p-3">
                   <div class="text text-center mt-3">
-                    <h4>500 rule</h4>
+                    <h4 id="numberRule">500 rule</h4>
                   </div>
                   <div class="text text-center mt-2">
-                    <h1 id="fivehundredResult">0s</h1>
+                    <h1 id="numberResult">0s</h1>
                   </div>
                 </div>
               </div>
@@ -233,12 +233,17 @@
             <code>Shutter Speed = (35 * Lens Aperture + 30 * Pixel Size) / Focal Length</code>
             <p>A Simplified version of the original NPF rule that does not take into account the pixel density of the
               camera sensor</p>
-            <h2>The 500 Rule</h2>
+            <h2>The 500/300/200 Rule</h2>
             <code>Shutter Speed = 500 / (Sensor Crop Factor * Focal Length) </code>
-            <p>The 500 rule is a measurement used to determine the maximum exposure time that can be used in a
+            <p>The 500/300/200 rule is a measurement used to determine the maximum exposure time that can be used in a
               photograph before star trails appear or before the stars become blurry. If you set the shutter speed for a
               longer amount of time than what is permitted by this rule, the photographs you take will not have sharp
-              stars. <b>I do not recommend using this rule</b>.</p>
+              stars.</p>
+              <ul>
+                <li>500 Rule: Pin Point Accuracy</li>
+                <li>300 Rule: Slight Trailing</li>
+                <li>200 Rule: Major trailing</li>
+              </ul>
             <h2>The 4 Crop Rule</h2>
             <code>Shutter Speed = (4 - Sensor Crop Factor) * 100 / Focal Length</code>
             <p>The simplest rule (except for the 500 rule) that is less precise then the NPF rule, but much more precise

@@ -1,5 +1,4 @@
 function calculateNPF() {
-  // TODO: form validation
   var sensorSize = document.querySelector('#sensorSize').value;
   var aperture = isNumber(document.querySelector('#aperture').value);
   var focalLength = isNumber(document.querySelector('#focalLength').value);
@@ -10,8 +9,19 @@ function calculateNPF() {
   document.getElementById("result").innerHTML = result.toFixed(1) + "s";
   simplifiedResult = (35 * aperture + 30 * pixelSize) / focalLength
   document.getElementById("simplifiedResult").innerHTML = simplifiedResult.toFixed(1) + "s";
-  fivehundredResult = 500 / (sensorSize * focalLength)
-  document.getElementById("fivehundredResult").innerHTML = fivehundredResult.toFixed(1) + "s";
+  var numberRule;
+  if (accuracy == 1) {
+    numberRule = 200;
+  }
+  else if (accuracy == 2) {
+    numberRule = 300;
+  }
+  else {
+    numberRule = 500;
+  }
+  numberResult = numberRule / (sensorSize * focalLength)
+  document.getElementById("numberResult").innerHTML = numberResult.toFixed(1) + "s";
+  document.getElementById("numberRule").innerHTML = numberRule + " rule";
   fourcropResult = (4 - sensorSize) * 100 / focalLength
   document.getElementById("fourcropResult").innerHTML = fourcropResult.toFixed(1) + "s";
 }

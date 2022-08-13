@@ -115,3 +115,8 @@ body {
 .collapsible {
     border: none;
 }
+
+.source {
+    font-style: italic;
+    font-size: small;
+}

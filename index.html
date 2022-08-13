@@ -254,7 +254,10 @@
             </p>
             <p>This calculation will result in stars having exactly 1 pixel smear.</p>
             <p>** For stars not on the celestial equator, the exposure time will be divided by the cosine of the
-              declination to get the same drift amount in pixels</p>
+              declination to get the same drift amount in pixels:
+              </br><code>Shutter Speed = ((206265 * Pixel Size in mm / Focal Length) / 15) / cos(Declination)</code>
+            </p>
+
             <p class="source">Clark, R. N. (2012, October 20). Nightscape Photography with Digital Cameras.
               Clarkvision.com. Retrieved
               August 12, 2022, from <a
@@ -271,7 +274,7 @@
             <h2>NPF Rule Simplified</h2>
             <code>Shutter Speed = (35 * Lens Aperture + 30 * Pixel Size) / Focal Length</code>
             <p>A Simplified version of the original NPF rule that does not take into account the pixel density of the
-              camera sensor</p>
+              camera sensor.</p>
             <p class="source">Michaud, F. (2020, December 1). La Règle NPF – Société Astronomique du Havre. sahavre.fr.
               Retrieved August 12, 2022, from <a
                 href="https://sahavre.fr/wp/regle-npf-rule/">https://sahavre.fr/wp/regle-npf-rule/</a></p>

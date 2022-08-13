@@ -5,11 +5,13 @@ function calculateNPF() {
   var pixelSize = isNumber(document.querySelector('#pixelSize').value);
   var declination = isNumber(document.querySelector('#declination').value);
   var accuracy = isNumber(document.querySelector('#accuracy').value);
-  plateResult = (206265 * (pixelSize / 1000) / focalLength) / 15
+  plateResult = (206265 * (pixelSize / 1000) / focalLength) / 15;
   document.getElementById("plateResult").innerHTML = plateResult.toFixed(1) + "s";
-  result = accuracy * (16.856 * aperture + 0.0997 * focalLength + 13.713 * pixelSize) / (focalLength * Math.cos(declination*3.14159/180))
+  noEqplateResult = ((206265 * (pixelSize / 1000) / focalLength) / 15) / Math.cos(declination*3.14159/180);
+  document.getElementById("noEqplateResult").innerHTML = noEqplateResult.toFixed(1) + "s";
+  result = accuracy * (16.856 * aperture + 0.0997 * focalLength + 13.713 * pixelSize) / (focalLength * Math.cos(declination*3.14159/180));
   document.getElementById("result").innerHTML = result.toFixed(1) + "s";
-  simplifiedResult = (35 * aperture + 30 * pixelSize) / focalLength
+  simplifiedResult = (35 * aperture + 30 * pixelSize) / focalLength;
   document.getElementById("simplifiedResult").innerHTML = simplifiedResult.toFixed(1) + "s";
   var numberRule;
   if (accuracy == 1) {

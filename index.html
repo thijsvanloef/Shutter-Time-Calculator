@@ -25,7 +25,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
   <!-- Bootstrap CSS end -->
-  <title>Shutter Time Calculator</title>
+  <title>NPF/Shutter Time Calculator</title>
   <link rel="icon" type="img/x-icon" href="img/Icon.png">
   <meta charset="UTF-8">
   <meta name="description"
@@ -40,7 +40,7 @@
   <!-- Main Menu Start -->
   <div id="wrapper" class="animate">
     <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark bg-dark">
-      <a class="navbar-brand" href="https://npf.loef.photos"><img src="img/Logo_small.png" alt="Loef Photography Logo"
+      <a class="navbar-brand" href="https://npf.loef.photos"><img src="img/Logo_small.png" alt="Loef Photography Calculator Logo"
           max-width="200"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,9 +67,9 @@
         <div class="col-10 offset-1 col-lg-8 offset-lg-2 div-wrapper d-flex justify-content-center align-items-center">
 
           <div class="div-to-align">
-            <h1>Shutter Time Calculator</h1>
+            <h1>NPF/Shutter Time Calculator</h1>
             <p>
-              This shutter time calculator uses 5 different techniques of calculating your shutter time.
+              This NPF & shutter time calculator uses 5 different techniques of calculating your shutter time.
               Most people are used to the default "500" rule, but this calculator also has: The Plate Scale calculation,
               the NPF rule, the simplified NPF rule and the 4 crop rule.
             </p>
@@ -251,7 +251,7 @@
                 </div>
               </div>
             </div>
-            <h2>Plate Scale Calculation</h2>
+            <h2>Plate Scale Calculator</h2>
             <code>Shutter Speed = (206265 * Pixel Size in mm / Focal Length) / 15</code>
             <p>The more technical equations for keeping stars round. Stars on the celestial equator move 15 arc-seconds
               per time second. So compute the angular size of a pixel to determine the star drift rate. The pixel pitch
@@ -267,7 +267,7 @@
               August 12, 2022, from <a
                 href="https://clarkvision.com/articles/nightscapes/">https://clarkvision.com/articles/nightscapes/</a>
             </p>
-            <h2>NPF Rule Calculation</h2>
+            <h2>NPF Rule Calculator</h2>
             <code>Shutter Speed = Accuracy * (16.856 * Lens Aperture + 0.0997 * Focal Length + 13.713 * Pixel Size) / (Focal Length * cos(Declination))</code>
             <p>The NFP rule is a rule that makes it (fairly) easy to calculate the maximum exposure time to take a photo
               of a starry sky without the stars trailing too much. This rule replaces the old “rule of 500” which gives
@@ -275,14 +275,14 @@
             <p class="source">Michaud, F. (2020, December 1). La Règle NPF – Société Astronomique du Havre. sahavre.fr.
               Retrieved August 12, 2022, from <a
                 href="https://sahavre.fr/wp/regle-npf-rule/">https://sahavre.fr/wp/regle-npf-rule/</a></p>
-            <h2>Simplified NPF Rule Calculation</h2>
+            <h2>Simplified NPF Rule Calculator</h2>
             <code>Shutter Speed = (35 * Lens Aperture + 30 * Pixel Size) / Focal Length</code>
             <p>A Simplified version of the original NPF rule that does not take into account the pixel density of the
               camera sensor.</p>
             <p class="source">Michaud, F. (2020, December 1). La Règle NPF – Société Astronomique du Havre. sahavre.fr.
               Retrieved August 12, 2022, from <a
                 href="https://sahavre.fr/wp/regle-npf-rule/">https://sahavre.fr/wp/regle-npf-rule/</a></p>
-            <h2>The 500/300/200 Rule Calculation</h2>
+            <h2>The 500/300/200 Rule Calculator</h2>
             <code>Shutter Speed = 500 / (Sensor Crop Factor * Focal Length) </code>
             <p>The 500/300/200 rule is a measurement used to determine the maximum exposure time that can be used in a
               photograph before star trails appear or before the stars become blurry. If you set the shutter speed for a
@@ -293,7 +293,7 @@
               <li>300 Rule: Slight Trailing</li>
               <li>500 Rule: Major trailing</li>
             </ul>
-            <h2>The 4 Crop Rule Calculation</h2>
+            <h2>The 4 Crop Rule Calculator</h2>
             <code>Shutter Speed = (4 - Sensor Crop Factor) * 100 / Focal Length</code>
             <p>The simplest rule (except for the 500 rule) that is less precise then the NPF rule, but much more precise
               then the 500 rule.</p>
